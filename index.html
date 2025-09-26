@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría SPI</title>
+    
+     <link rel="icon" type="image/png" href="C:\proyecto spi\imagenes_spi\spilogo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+   <style>
+    .bg-container {
+        margin: 0;
+        padding: 0;
+        background-image: url("file:///C:/proyecto spi/imagenes_spi/fondo_ima.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 65vh;
+    }
+
+    /* Navbar general */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background: white;
+        border-top: 16px solid #2870db;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+    }
+
+    /* Contenedor adaptable */
+    .navbar-container {
+        display: flex;
+        flex-direction: column; /* Móvil: logo arriba, menú abajo */
+        align-items: center;
+    }
+
+    /* Logo */
+    .navbar-logo {
+        width: 220px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Menú horizontal */
+    .navbar-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap; /* Si no entran, bajan de línea */
+        gap: 1.5rem;
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    .navbar-links a {
+        color: #2870db;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-links a:hover {
+        color: #fff174;
+    }
+
+    /* Versión escritorio */
+    @media (min-width: 992px) {
+        .navbar-container {
+            flex-direction: row; /* Logo a la izquierda, menú a la derecha */
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar-logo {
+            margin-bottom: 0;
+            width: 340px;
+            height: auto;
+        }
+
+        .navbar-links {
+            justify-content: flex-end;
+        }
+    }
+
+    /* Espacio para que el contenido no quede tapado */
+    main {
+        padding-top: 200px;
+    }
+
+    /* 🎯 Hero styles que te faltaban */
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 4rem); /* responsivo */
+        font-weight: 800;
+        color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* sombra */
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.5rem);
+        color: white;
+        font-weight: 600;
+        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        margin-bottom: 2rem;
+    }
+</style>
+
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="C:\proyecto spi\imagenes_spi\SPILOGO.jpg" alt="Logo" class="navbar-logo">
+            <div class="navbar-links">
+                <a href="#home">Inicio</a>
+                <a href="#about">Quiénes Somos</a>
+                <a href="#services">Servicios</a>
+                <a href="#portfolio">Testimonios</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-20">
+        <div class="bg-container">
+            <!-- Sección de Inicio (Hero) -->
+            <section id="home"
+                class="relative text-white py-16 md:py-24 flex items-center justify-center min-h-[60vh] rounded-b-3xl overflow-hidden">
+                
+                <div class="absolute inset-0 bg-cover bg-center opacity-20 hero-bg"></div>
+                <div class="relative container mx-auto text-center px-4 sm:px-6 lg:px-8 mt-12 md:mt-16 ">
+                    <h1 class="hero-title">
+                        Impulsando el Éxito de Tu Negocio
+                    </h1>
+                    <p class="hero-subtitle">
+                        Ofrecemos soluciones personalizadas que transforman empresas y potencian resultados
+                    </p>
+                    <a href="#services"
+                        class="inline-block bg-white text-[#2870db] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#fff174] hover:text-[#2a6eba] transition duration-300 transform hover:scale-105">
+                        Conoce Nuestros Servicios
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sección Quiénes Somos -->
+        <section id="about" class="py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2a6eba] mb-12">
+                    Quiénes Somos
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="rounded-lg overflow-hidden shadow-xl">
+                        <img src="C:\proyecto spi\imagenes_spi\somos.jpg" alt="Equipo de Consultoría" class="w-full h-auto object-cover" />
+                    </div>
+                    <div>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed text-justify">
+                            En <b>SPI</b>; estamos comprometidos con el crecimiento y la transformación de las empresas en Perú. Fundada en 2001 por profesionales 
+                            con una vasta experiencia en diversas áreas empresariales, nuestra misión es simple: empoderar a nuestros clientes, sean PYMES, emprendedores o grandes empresas, con estrategias innovadoras y soluciones prácticas que generen resultados medibles.
+
+</p>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed text-justify">
+                           Nuestra visión es ser el socio estratégico de confianza en el mercado peruano, reconocido por nuestra excelencia, integridad y la capacidad de convertir 
+desafíos en oportunidades para el sector específico de cada cliente. Creemos en un enfoque colaborativo, trabajando codo a codo con nuestros clientes para entender
+ sus necesidades y ofrecer un valor excepcional.
+                        </p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-[#2a6eba] text-lg">
+                            <li class="flex items-center"><i data-lucide="lightbulb"
+                                    class="w-5 h-5 text-[#2870db] mr-2"></i> Innovación</li>
+                            <li class="flex items-center"><i data-lucide="trending-up"
+                                    class="w-5 h-5 text-[#2870db] mr-2"></i> Resultados</li>
+                            <li class="flex items-center"><i data-lucide="users"
+                                    class="w-5 h-5 text-[#2870db] mr-2"></i> Colaboración</li>
+                            <li class="flex items-center"><i data-lucide="briefcase"
+                                    class="w-5 h-5 text-[#2870db] mr-2"></i> Compromiso</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="services" class="py-16 ">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#1e56a0] mb-12">
+                    Nuestros Servicios
+                </h2>
+                <p class="text-center text-xl text-gray-700 max-w-3xl mx-auto mb-12">
+                    Ofrecemos un portafolio completo de servicios de consultoría
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-4">
+                    <div
+                        class="bg-white rounded-lg shadow-xl p-8 text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="briefcase" class="w-16 h-16 text-[#2a6eba] mb-6"></i>
+                        <h3 class="text-xl font-semibold text-[#2870db] mb-3">Asesoría Legal Empresarial</h3>
+                        <p class="text-gray-600 mb-4">Brindamos orientación legal especializada para garantizar que tu
+                            negocio cumpla con la normativa y minimice riesgos.</p>
+                        <a href="#contact" class="text-[#2870db] hover:text-[#fff174] font-semibold">Más
+                            Información</a>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-xl p-8 text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="trending-up" class="w-16 h-16 text-[#2a6eba] mb-6"></i>
+                        <h3 class="text-xl font-semibold text-[#2870db] mb-3">Estrategia Empresarial y Crecimiento</h3>
+                        <p class="text-gray-600 mb-4">Desarrollamos planes estratégicos personalizados para impulzar tu
+                            crecimiento,la innovación y la ventaja competitiva de tu empresa.</p>
+                        <a href="#contact" class="text-[#2870db] hover:text-[#fff174] font-semibold">Más
+                            Información</a>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-xl p-8 text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="users" class="w-16 h-16 text-[#2a6eba] mb-6"></i>
+                        <h3 class="text-xl font-semibold text-[#2870db] mb-3">Gestion de Recursos Humanos</h3>
+                        <p class="text-gray-600 mb-4">Mejoramos la gestión de talento, el desarrollo organizacional y
+                            creamos un clima laboral positivo y productivo.</p>
+                        <a href="#contact" class="text-[#2870db] hover:text-[#fff174] font-semibold">Más
+                            Información</a>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white rounded-lg shadow-xl p-8 text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="lightbulb" class="w-16 h-16 text-[#2a6eba] mb-6"></i>
+                        <h3 class="text-xl font-semibold text-[#2870db] mb-3">Consultoría Financiera </h3>
+                        <p class="text-gray-600 mb-4">
+                            Optimizamos tus finanzas, analizamos la rentabilidad y te ayudamos en la planificación para
+                            una solidez económica.</p>
+                        <a href="#contact" class="text-[#2870db] hover:text-[#fff174] font-semibold">Más
+                            Información</a>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-xl p-8 text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="briefcase" class="w-16 h-16 text-[#2a6eba] mb-6"></i>
+                        <h3 class="text-xl font-semibold text-[#2870db] mb-3">Transformación Digital</h3>
+                        <p class="text-gray-600 mb-4">
+                            Impulsamos la digitalización de tu negocio, implementando soluciones tecnológicas para
+                            aumentar la eficiencia y competitividad.</p>
+                        <a href="#contact" class="text-[#2870db] hover:text-[#fff174] font-semibold">Más
+                            Información</a>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-xl p-8 text-center hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <i data-lucide="book-open" class="w-16 h-16 text-[#2a6eba] mb-6"></i>
+                        <h3 class="text-xl font-semibold text-[#2870db] mb-3">Gestión de Proyectos</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aseguramos la ejecución exitosa de tus proyectos, desde la planificación hasta la entrega,
+                            optimizando recursos y tiempos.</p>
+                        <a href="#contact" class="text-[#2870db] hover:text-[#fff174] font-semibold">Más
+                            Información</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Testimonios -->
+        <section id="portfolio" class="py-16 ">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2a6eba] mb-12">
+                    Testimonios de Clientes
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
+                        <p class="text-lg text-gray-700 italic mb-4 text-justify">"Gracias a ADSI, logramos una
+                            transformación digital que optimizó nuestros procesos internos y mejoró la experiencia del
+                            cliente. ¡Altamente recomendados!"
+
+                        </p>
+                        <p class="font-semibold text-[#2870db]">- Gerente General</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
+                        <p class="text-lg text-gray-700 italic mb-4 text-justify">"Su asesoría financiera fue clave para
+                            reestructurar nuestras operaciones y alcanzar una rentabilidad que no esperábamos. Un equipo
+                            profesional y dedicado."
+
+                        </p>
+                        <p class="font-semibold text-[#2870db]">- Director Financiero</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
+                        <p class="text-lg text-gray-700 italic mb-4 text-justify">"El acompañamiento en recursos humanos nos permitió
+                            construir un equipo más cohesionado y productivo. ¡Estamos muy satisfechos con los
+                            resultados!"</p>
+                        <p class="font-semibold text-[#2870db]">- Director Financiero</p>
+                    </div>
+
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#contact"
+                        class="inline-block bg-[#2870db] text-white hover:bg-[#2a6eba] font-bold py-3 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+                        Conoce Cómo Podemos Ayudarte
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Blog -->
+        <section id="blog" class="py-16 ">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2870db] mb-12">
+                    Nuestro Blog y Recursos
+                </h2>
+                <h3 class="text-center text-xl text-gray-700 max-w-3xl mx-auto mb-12">Explora nuestros artículos, guías
+                    y recursos para mantenerte al día con las últimas tendencias y estrategias empresariales</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="C:\proyecto spi\imagenes_spi\estratedigi.jpg" alt="Post de Blog 1" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-[#2a6eba] mb-2">5 Estrategias Digitales</h3>
+                            <p class="text-gray-600 text-sm mb-4">Descubre cómo digitalizar tu negocio de manera efectiva y mantenerte competitivo en el mercado actual.</p>
+                            <a href="#" class="inline-block text-[#2870db] hover:text-[#fff174] font-semibold">Leer
+                                Más</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="C:\proyecto spi\imagenes_spi\planies.jpg" alt="Post de Blog 1" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-[#2a6eba] mb-2">Guía Completa para la Planificación Estratégica
+</h3>
+                            <p class="text-gray-600 text-sm mb-4">Aprende a definir y ejecutar tu estrategia empresarial para alcanzar tus metas a largo plazo.</p>
+                            <a href="#" class="inline-block text-[#2870db] hover:text-[#fff174] font-semibold">Leer
+                                Más</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition duration-300">
+                        <img src="C:\proyecto spi\imagenes_spi\bueno_gestion.jpg" alt="Post de Blog 1" class="w-full h-48 object-cover" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-[#2a6eba] mb-2">Cómo Optimizar la Gestión de Talento en tu Empresa
+</h3>
+                            <p class="text-gray-600 text-sm mb-4">Consejos prácticos para atraer, retener y desarrollar el mejor talento humano.</p>
+                            <a href="#" class="inline-block text-[#2870db] hover:text-[#fff174] font-semibold">Leer
+                                Más</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2a6eba] mb-12">
+                    Contáctanos
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                    <!-- Formulario -->
+                    <form class="space-y-4" action="https://formsubmit.co/consultoria@adsi.pe" method="POST">
+                        <div>
+                            <label for="nombre" class="block text-sm font-semibold text-gray-700 mb-2">Nombres</label>
+                            <input id="nombre" type="text" placeholder="Escribe tu nombre"
+                                class="w-full border border-gray-300 rounded-md p-3 focus:ring-[#2870db] focus:border-[#2870db]" />
+                        </div>
+
+                        <div>
+                            <label for="apellido"
+                                class="block text-sm font-semibold text-gray-700 mb-2">Apellidos</label>
+                            <input id="apellido" type="text" placeholder="Escribe tu apellido"
+                                class="w-full border border-gray-300 rounded-md p-3 focus:ring-[#2870db] focus:border-[#2870db]" />
+                        </div>
+
+                        <div>
+                            <label for="correo" class="block text-sm font-semibold text-gray-700 mb-2">Correo</label>
+                            <input id="correo" type="email" placeholder="ejemplo@correo.com"
+                                class="w-full border border-gray-300 rounded-md p-3 focus:ring-[#2870db] focus:border-[#2870db]" />
+                        </div>
+
+                        <div>
+                            <label for="mensaje" class="block text-sm font-semibold text-gray-700 mb-2">Mensaje</label>
+                            <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje"
+                                class="w-full border border-gray-300 rounded-md p-3 focus:ring-[#2870db] focus:border-[#2870db]"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-[#2870db] text-white py-3 rounded-lg hover:bg-[#2a6eba] transition transform hover:scale-105">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+
+                    <!-- Información de contacto -->
+                    <div class="flex flex-col justify-center p-8 rounded-lg shadow-xl bg-white space-y-8">
+.
+
+
+                        <!-- Mapa -->
+                        <div>
+                            <h4 class="text-lg font-semibold text-[#2870db] mb-4">Ubicación</h4>
+                            <iframe class="w-full h-48 rounded-lg"
+                                src="https://www.google.com/maps?q=Jr.+General+Felipe+Varela+1233,+Of.+108,+Bre%C3%B1a,+Lima&output=embed"
+                                style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+ <!-- Info de contacto -->
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-map-marker-alt text-blue-main text-xl"></i>
+                                <span><strong>Dirección:</strong> Jr.Varela 1233, Breña 15083</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-phone-alt text-blue-main text-xl"></i>
+                                <span><strong>Teléfono:</strong> +51 995 770 117</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-envelope text-blue-main text-xl"></i>
+                                <span><strong>Mail   :</strong>    informes@spi.pe</span>
+                            </div>
+                        </div>
+                        <!-- Redes sociales -->
+                        <h4 class="text-lg font-semibold text-[#2870db] mb-4">Síguenos</h4>
+
+                        <div class="flex space-x-3 text-gray-600">
+
+                            <a href="#" aria-label="TikTok"
+                                class="transition-transform duration-300 hover:scale-110 inline-block">
+                                <img src="C:\proyecto spi\imagenes_spi\logtik.jpg" alt="TikTok"
+                                    class="w-8 h-8 rounded-lg transition duration-300 hover:brightness-125">
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100057131213036" aria-label="Facebook"
+                                class="transition-transform duration-300 hover:scale-110 inline-block">
+                                <img src="C:\proyecto spi\imagenes_spi\logoface.jpg" alt="Facebook"
+                                    class="w-8 h-8 rounded-lg transition duration-300 hover:brightness-125">
+                            </a>
+                            <a href="#" aria-label="LinkedIn"
+                                class="transition-transform duration-300 hover:scale-110 inline-block">
+                                <img src="C:\proyecto spi\imagenes_spi\linklo.jpg" alt="LinkedIn"
+                                    class="w-8 h-8 rounded-lg transition duration-300 hover:brightness-125">
+                            </a>
+                            <a href="#" target="_blank" aria-label="Instagram"
+                                class="transition-transform duration-300 hover:scale-110 inline-block">
+                                <img src="C:\proyecto spi\imagenes_spi\insta.jpg" alt="Instagram"
+                                    class="w-8 h-8 rounded-lg transition duration-300 hover:brightness-125">
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=gmBzNB1OGlw" aria-label="YouTube"
+                                class="transition-transform duration-300 hover:scale-110 inline-block">
+                                <img src="C:\proyecto spi\imagenes_spi\youlogo.jpg" alt="YouTube"
+                                    class="w-8 h-8 rounded-lg transition duration-300 hover:brightness-125">
+                            </a>
+                            <a href="#" aria-label="Telegram"
+                                class="transition-transform duration-300 hover:scale-110 inline-block">
+                                <img src="C:\proyecto spi\imagenes_spi\tele.jpg" alt="Telegram"
+                                    class="w-8 h-8 rounded-lg transition duration-300 hover:brightness-125">
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-[#2a6eba] text-white py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p> © 2025 INTEGRAL PROFESIONAL SERVICE SAC. Todos los derechos reservados</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-[#fff174] transition duration-300">RUC: 20503744750</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de JavaScript -->
+    <script>
+        // Inicializa Lucide Icons para que los íconos se rendericen
+        lucide.createIcons();
+
+        // Actualiza el año en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- Lógica del menú móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Cambia el icono del botón para indicar el estado del menú
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        // Cierra el menú móvil al hacer clic en un enlace
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
+            });
+        });
+
+        // --- Lógica del formulario de contacto ---
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita el envío real del formulario
+
+            // Aquí podrías agregar lógica para enviar los datos a un servidor
+            // fetch('tu_endpoint_api.php', { method: 'POST', body: new FormData(contactForm) })
+            //   .then(response => response.json())
+            //   .then(data => {
+            //     // Lógica para manejar la respuesta del servidor
+            //   });
+
+            // Simulamos el envío exitoso
+            console.log('Formulario enviado:', Object.fromEntries(new FormData(contactForm)));
+
+            // Oculta el formulario y muestra el mensaje de éxito
+            contactForm.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+
+            // Opcional: Ocultar el mensaje después de unos segundos
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+                contactForm.classList.remove('hidden'); // Vuelve a mostrar el formulario
+                contactForm.reset(); // Limpia los campos del formulario
+            }, 5000); // El mensaje se oculta después de 5 segundos
+        });
+    </script>
+</body>
+
+</html>
